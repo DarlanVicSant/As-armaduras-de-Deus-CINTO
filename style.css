@@ -187,4 +187,15 @@ justify-content:center;
 font-size:32px;
 }
 
+
 }
+
+<style>
+  .copyright {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+</style>
