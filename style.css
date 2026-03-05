@@ -191,18 +191,14 @@ font-size:32px;
 }
 
 <style>
-  .copyright {
-    background: black;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 8px;
-    display: inline-block;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 40px;
-  }
+.rodape{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 </style>
