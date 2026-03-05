@@ -192,10 +192,17 @@ font-size:32px;
 
 <style>
   .copyright {
-    background-color: black;
+    background: black;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     text-align: center;
     font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
   }
 </style>
