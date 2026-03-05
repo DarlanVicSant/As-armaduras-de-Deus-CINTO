@@ -1,0 +1,190 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f0b07,#1a1309);
+color:#f5e6b0;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #3a2c12;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#ffd369;
+}
+
+.menu a{
+color:#e8d7a3;
+text-decoration:none;
+margin-left:25px;
+font-size:15px;
+position:relative;
+transition:0.3s;
+}
+
+.menu a::after{
+content:"";
+width:0%;
+height:2px;
+background:#ffd369;
+position:absolute;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+.menu a:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+height:60vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:url("img/soldado.jpg") center/cover;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero h1{
+font-size:48px;
+z-index:2;
+color:#ffd369;
+animation:fadeDown 1s ease;
+}
+
+.hero p{
+z-index:2;
+margin-top:10px;
+font-size:18px;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
+}
+
+/* CARD */
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+padding:30px;
+border-radius:12px;
+backdrop-filter:blur(6px);
+margin-top:25px;
+transition:0.4s;
+animation:fadeUp 1s ease;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* IMAGENS */
+
+.img-section{
+width:100%;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* BOTÃO */
+
+button{
+background:linear-gradient(45deg,#ffd369,#cfa52e);
+border:none;
+padding:12px 22px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+margin-top:15px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* ANIMAÇÕES */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+.menu{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+}
