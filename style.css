@@ -1,82 +1,422 @@
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 /* BODY */
-body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
-  text-align: center;
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #020024, #090979, #000);
+  color:#fff;
+  overflow-x:hidden;
 }
 
-/* HERO (topo com animação) */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(180deg, #000, #222);
+/* HEADER */
+.header{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+/* LOGO */
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#00eaff;
+}
+
+/* MENU */
+.menu a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  position:relative;
+  transition:0.3s;
+}
+
+/* ANIMAÇÃO MENU */
+.menu a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:#00eaff;
+  left:0;
+  bottom:-5px;
+  transition:0.4s;
+}
+
+.menu a:hover::after{
+  width:100%;
+}
+
+.menu a:hover{
+  color:#00eaff;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564') center/cover;
+}
+
+.hero h2{
+  font-size:50px;
+  animation:float 3s ease-in-out infinite;
+}
+
+.hero p{
+  margin:15px 0;
+  opacity:0.8;
+}
+
+/* BOTÃO */
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:5px;
+  background:#00eaff;
+  color:black;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+  background:#00bcd4;
+}
+
+/* SECTIONS */
+section{
+  padding:120px 30px;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:10px;
+  width:200px;
+  text-align:center;
+  transition:0.4s;
+  backdrop-filter:blur(10px);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  background:#00eaff;
+  color:black;
+}
+
+/* GALERIA */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.1);
+}
+
+/* FORM */
+form{
+  max-width:400px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input, textarea{
+  padding:10px;
+  border:none;
+  border-radius:5px;
+}
+
+input:focus, textarea:focus{
+  outline:2px solid #00eaff;
+}
+
+/* ANIMAÇÃO */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  .hero h2{
+    font-size:30px;
+  }
+}
+
+/* LOADING */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  color:#00eaff;
+  font-size:30px;
+  transition:0.8s;
+}
+
+/* CURSOR HOVER */
+a:hover ~ div, button:hover ~ div{
+  transform:scale(2);
+}
+
+/* SUAVIZAÇÃO GLOBAL */
+body{
+  transition:0.4s;
+}
+
+
+/* GALÁXIAS */
+.galaxias{
+  padding:100px 20px;
+  text-align:center;
+}
+
+/* GRID */
+.grid-galaxias{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:40px;
+}
+
+/* CARD */
+.galaxia{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+/* IMAGEM */
+.galaxia img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+/* INFO ESCONDIDA */
+.info{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:linear-gradient(transparent, black);
+  color:white;
+  padding:20px;
+  transform:translateY(100%);
+  transition:0.5s;
+}
+
+
+/* GALÁXIAS */
+.galaxias{
+  padding:100px 20px;
+  text-align:center;
+}
+
+/* GRID */
+.grid-galaxias{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:40px;
+}
+
+/* CARD */
+.galaxia{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+/* IMAGEM */
+.galaxia img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+/* INFO ESCONDIDA */
+.info{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:linear-gradient(transparent, black);
+  color:white;
+  padding:20px;
+  transform:translateY(100%);
+  transition:0.5s;
+}
+
+/* TEXTO */
+.info h3{
+  margin-bottom:10px;
+  color:#00eaff;
+}
+
+.info p{
+  font-size:14px;
+  opacity:0.8;
+}
+
+/* HOVER INSANO */
+.galaxia:hover img{
+  transform:scale(1.1);
+}
+
+.galaxia:hover .info{
+  transform:translateY(0);
+}
+
+/* GLOW */
+.galaxia:hover{
+  box-shadow:0 0 30px #00eaff;
+}
+
+.card {
+  background: rgba(20,20,30,0.9);
+  border-radius: 15px;
   overflow: hidden;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* IMAGEM DO CINTO */
-.belt {
-  width: 300px;
-  margin-bottom: 20px;
-
-  /* animação */
-  animation: slideIn 1.5s ease forwards, float 3s ease-in-out infinite;
-  opacity: 0;
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-/* TÍTULO */
-.hero h1 {
-  font-size: 2.5rem;
-  animation: fadeIn 2s ease forwards;
-  opacity: 0;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255,255,255,0.4);
 }
 
-/* CONTEÚDO */
-.content {
-  padding: 50px;
-  background: #fff;
-  color: #111;
+.card h3 {
+  margin: 10px 0 5px 0;
 }
 
-/* =========================
-   ANIMAÇÕES
-========================= */
-
-/* entra vindo de cima */
-@keyframes slideIn {
-  0% {
-    transform: translateY(-200px) scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
+.card p {
+  padding: 0 10px 10px 10px;
+  font-size: 0.9rem;
 }
 
-/* leve flutuação */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* PLANETAS GRID */
+.planetas{
+  padding:100px 20px;
+  text-align:center;
 }
 
-/* fade no texto */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+.titulo{
+  font-size:40px;
+  margin-bottom:50px;
+  color:#00eaff;
+}
+
+/* GRID */
+.grid-planetas{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:30px;
+}
+
+/* CARD PLANETA */
+.planeta{
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  overflow:hidden;
+  transition:0.4s;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  position:relative;
+}
+
+/* IMAGEM */
+.planeta img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+/* TEXTO */
+.planeta h3{
+  margin:15px;
+  font-size:22px;
+}
+
+.planeta p{
+  margin-bottom:20px;
+  opacity:0.7;
+}
+
+/* HOVER INSANO */
+.planeta:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 30px #00eaff;
+}
+
+.planeta:hover img{
+  transform:scale(1.1);
+}
+
+/* GLOW ANIMADO */
+.planeta::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, #00eaff55, transparent);
+  opacity:0;
+  transition:0.5s;
+}
+
+.planeta:hover::before{
+  opacity:1;
 }
