@@ -1,96 +1,130 @@
-"use strict";
+// ================= LOADING =================
+window.addEventListener("load", ()=>{
+  const loader = document.createElement("div");
+  loader.id = "loader";
+  loader.innerHTML = "<h1>Carregando Universo...</h1>";
 
-/* =========================
-   UTILIDADES
-========================= */
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => document.querySelectorAll(selector);
+  document.body.appendChild(loader);
 
-/* =========================
-   MENU MOBILE
-========================= */
-const menuToggle = $(".menu-toggle");
-const navLinks = $(".nav-links");
-
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-}
-
-/* =========================
-   SCROLL SUAVE
-========================= */
-$$("a[href^='#']").forEach(link => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const target = $(link.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  });
-});
-
-/* =========================
-   HEADER SCROLL EFFECT
-========================= */
-const header = $(".header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
-  } else {
-    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
-  }
-});
-
-/* =========================
-   ANIMAÇÃO AO SCROLL
-========================= */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.2
-});
-
-$$(".animate").forEach(el => observer.observe(el));
-
-/* =========================
-   DARK MODE
-========================= */
-const toggleTheme = $("#theme-toggle");
-
-if (toggleTheme) {
-  toggleTheme.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark") ? "dark" : "light"
-    );
-  });
-
-  // carregar tema salvo
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-  }
-}
-
-/* =========================
-   LOADING SCREEN
-========================= */
-window.addEventListener("load", () => {
-  const loader = $("#loader");
-  if (loader) {
+  setTimeout(()=>{
     loader.style.opacity = "0";
-    setTimeout(() => loader.remove(), 500);
+    setTimeout(()=> loader.remove(), 800);
+  },1200);
+});
+
+// ================= TROCA DE PÁGINA =================
+function mudarPagina(p){
+  document.body.style.opacity = 0;
+
+  setTimeout(()=>{
+    window.location.href = p;
+  },300);
+}
+
+// ================= FORM =================
+function enviar(e){
+  e.preventDefault();
+  alert("Mensagem enviada 🚀");
+}
+
+// ================= ANIMAÇÃO SEGURA =================
+function animar(){
+  document.querySelectorAll("section, .card, img").forEach(el=>{
+    let top = el.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 50){
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    } else {
+      // 👇 NÃO DEIXA SUMIR
+      el.style.opacity = "1";
+    }
+  });
+}
+
+// scroll ativa animação
+window.addEventListener("scroll", animar);
+
+// ================= INICIAR (CORRIGIDO) =================
+window.addEventListener("DOMContentLoaded", ()=>{
+  
+  document.body.style.opacity = "1";
+
+  document.querySelectorAll("section, .card, img").forEach(el=>{
+    el.style.opacity = "0";
+    el.style.transform = "translateY(60px)";
+    el.style.transition = "0.8s";
+  });
+
+  // 👇 FORÇA APARECER (ESSENCIAL)
+  setTimeout(animar, 200);
+});
+
+// ================= CURSOR =================
+let cursor = document.createElement("div");
+
+cursor.style.width = "15px";
+cursor.style.height = "15px";
+cursor.style.border = "2px solid #00eaff";
+cursor.style.borderRadius = "50%";
+cursor.style.position = "fixed";
+cursor.style.pointerEvents = "none";
+cursor.style.transition = "0.1s";
+
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove", e=>{
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+// ================= ESTRELAS =================
+for(let i=0;i<100;i++){
+  let star = document.createElement("div");
+
+  star.style.position = "fixed";
+  star.style.width = "2px";
+  star.style.height = "2px";
+  star.style.background = "white";
+  star.style.top = Math.random()*100 + "vh";
+  star.style.left = Math.random()*100 + "vw";
+  star.style.opacity = Math.random();
+
+  document.body.appendChild(star);
+
+  setInterval(()=>{
+    star.style.opacity = Math.random();
+  },1000);
+}
+
+// ================= PARTÍCULAS =================
+for(let i=0;i<25;i++){
+  let p = document.createElement("div");
+
+  p.style.position = "fixed";
+  p.style.width = "5px";
+  p.style.height = "5px";
+  p.style.background = "#00eaff";
+  p.style.borderRadius = "50%";
+  p.style.left = Math.random()*100 + "vw";
+  p.style.top = Math.random()*100 + "vh";
+  p.style.opacity = 0.5;
+
+  document.body.appendChild(p);
+
+  setInterval(()=>{
+    p.style.top = Math.random()*100 + "vh";
+    p.style.left = Math.random()*100 + "vw";
+  },3000);
+}
+
+// ================= PARALLAX =================
+document.addEventListener("mousemove", e=>{
+  let x = (e.clientX / window.innerWidth) * 20;
+  let y = (e.clientY / window.innerHeight) * 20;
+
+  let hero = document.querySelector(".hero");
+  if(hero){
+    hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
   }
 });
