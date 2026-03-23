@@ -357,20 +357,18 @@ input:focus, textarea:focus{
 /* QUADRADOS */
 .texto-lateral,
 .texto-lateral2{
-  position:static !important; /* REMOVE ABSOLUTE */
-
-  width:800px !important;
+  width:900px !important;   /* AUMENTA A LARGURA */
   max-width:90% !important;
 
   padding:50px !important;
 
-  font-size:24px !important;
+  font-size:22px !important;
   line-height:1.8 !important;
+
+  text-align:left !important; /* deixa normal */
 
   margin:20px auto !important;
 
-  background:rgba(0,0,0,0.7) !important;
-  border-radius:20px !important;
-
-  box-shadow:0 0 40px rgba(255,215,0,0.5) !important;
+  background:rgba(0,0,0,0.7);
+  border-radius:20px;
 }
