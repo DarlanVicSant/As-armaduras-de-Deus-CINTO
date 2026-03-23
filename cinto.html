@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Cinto da Verdade</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Cinto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="header">
-
   <div class="logo">🛡️ O Cinto da Verdade</div>
 
   <nav class="menu">
@@ -30,72 +24,24 @@
   </nav>
 
   <div class="menu-toggle">☰</div>
-
 </header>
 
-<!-- ================= HERO ================= -->
 <section class="hero">
-
   <div class="hero-content">
-
     <h1>Cinto da Verdade</h1>
-
-    <p>
-      “Permaneçam firmes, cingindo-se com o cinto da verdade”
-      <br><br>
-      Efésios 6:14 nos ensina que a verdade é o alicerce da vida espiritual.
-    </p>
+    <p>Efésios 6:14 — fundamento da armadura espiritual.</p>
 
     <div class="hero-buttons">
-      <a href="reflexao.html">
-        <button>Reflexão</button>
-      </a>
-
-      <a href="historia.html">
-        <button class="btn-outline">História</button>
-      </a>
+      <a href="reflexao.html"><button>Reflexão</button></a>
+      <a href="historia.html"><button class="btn-outline">História</button></a>
     </div>
-
   </div>
-
 </section>
 
-<!-- ================= SEÇÃO EXTRA ================= -->
-<section>
-
-  <h2 style="text-align:center; margin-bottom:40px;">O que é o Cinto da Verdade?</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Firmeza</h3>
-      <p>A verdade sustenta toda a armadura espiritual.</p>
-    </div>
-
-    <div class="card">
-      <h3>Identidade</h3>
-      <p>Quem conhece a verdade sabe quem é em Deus.</p>
-    </div>
-
-    <div class="card">
-      <h3>Proteção</h3>
-      <p>A verdade protege contra enganos e mentiras.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= JS ================= -->
 <script>
-
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
-
-toggle.addEventListener("click", ()=>{
-  menu.classList.toggle("active");
-});
-
+toggle.addEventListener("click", ()=> menu.classList.toggle("active"));
 </script>
 
 </body>
