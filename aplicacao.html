@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-
 <meta charset="UTF-8">
 <title>Aplicação</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<nav>
+<header class="header">
+  <div class="logo">🛡️ O Cinto da Verdade</div>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="cinto.html">Cinto</a>
+    <a href="significado.html">Significado</a>
+    <a href="historia.html">História</a>
+    <a href="aplicacao.html">Aplicação</a>
+    <a href="versiculos.html">Versículos</a>
+    <a href="reflexao.html">Reflexão</a>
+  </nav>
+  <div class="menu-toggle">☰</div>
+</header>
 
-<div class="logo">🛡 Cinto da Verdade</div>
-
-<div class="menu">
-<a href="index.html">Início</a>
-<a href="cinto.html">Cinto</a>
-<a href="significado.html">Significado</a>
-<a href="historia.html">História</a>
-<a href="aplicacao.html">Aplicação</a>
-<a href="versiculos.html">Versículos</a>
-<a href="reflexao.html">Reflexão</a>
-
-</nav>
-
-<section class="container">
-
-<h1>Aplicação Prática</h1>
-
-<div class="card">
-
-<ul>
-<li>Viver com honestidade</li>
-<li>Buscar a verdade na Palavra</li>
-<li>Rejeitar mentiras</li>
-</ul>
-
-</div>
-
+<section class="hero">
+  <div class="hero-content">
+    <h1>Aplicação</h1>
+    <p>Viver na verdade é viver firme em Deus.</p>
+  </div>
 </section>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+toggle.addEventListener("click", ()=> menu.classList.toggle("active"));
+</script>
 
 </body>
 </html>
