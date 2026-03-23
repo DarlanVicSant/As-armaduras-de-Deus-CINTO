@@ -1,64 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
+  <meta charset="UTF-8">
+  <title>Cinto da Verdade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-<title>Cinto da Verdade</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<nav>
+<!-- ================= HEADER ================= -->
+<header class="header">
 
-<div class="logo">🛡 O CINTO DA VERDADE</div>
+  <div class="logo">🛡️ O Cinto da Verdade</div>
 
-<div class="menu">
-<a href="index.html">Início</a>
-<a href="cinto.html">Cinto</a>
-<a href="significado.html">Significado</a>
-<a href="historia.html">História</a>
-<a href="aplicacao.html">Aplicação</a>
-<a href="versiculos.html">Versículos</a>
-<a href="reflexao.html">Reflexão</a>
-</div>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="cinto.html">Cinto</a>
+    <a href="significado.html">Significado</a>
+    <a href="historia.html">História</a>
+    <a href="aplicacao.html">Aplicação</a>
+    <a href="versiculos.html">Versículos</a>
+    <a href="reflexao.html">Reflexão</a>
+  </nav>
 
-</nav>
+  <div class="menu-toggle">☰</div>
 
+</header>
+
+<!-- ================= HERO ================= -->
 <section class="hero">
 
-<h1>Cinto da Verdade</h1>
+  <div class="hero-content">
 
-<p>Efésios 6:14</p>
+    <h1>Cinto da Verdade</h1>
 
-</section>
+    <p>
+      “Permaneçam firmes, cingindo-se com o cinto da verdade”
+      <br><br>
+      Efésios 6:14 nos ensina que a verdade é o alicerce da vida espiritual.
+    </p>
 
-<section class="container">
+    <div class="hero-buttons">
+      <a href="reflexao.html">
+        <button>Reflexão</button>
+      </a>
 
-<h2>Significado Espiritual</h2>
+      <a href="historia.html">
+        <button class="btn-outline">História</button>
+      </a>
+    </div>
 
-<div class="card">
-
-<p>
-O cinto sustenta toda a armadura. Ele representa a verdade de Deus,
-que mantém o cristão firme.
-</p>
-
-</div>
-
-<h2>Aplicação</h2>
-
-<div class="item">📖 Estude a Palavra diariamente</div>
-<div class="item">🧭 Viva com integridade</div>
-<div class="item">🛡 Permaneça firme na verdade</div>
+  </div>
 
 </section>
 
-<script src="js/script.js"></script>
+<!-- ================= SEÇÃO EXTRA ================= -->
+<section>
+
+  <h2 style="text-align:center; margin-bottom:40px;">O que é o Cinto da Verdade?</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Firmeza</h3>
+      <p>A verdade sustenta toda a armadura espiritual.</p>
+    </div>
+
+    <div class="card">
+      <h3>Identidade</h3>
+      <p>Quem conhece a verdade sabe quem é em Deus.</p>
+    </div>
+
+    <div class="card">
+      <h3>Proteção</h3>
+      <p>A verdade protege contra enganos e mentiras.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= JS ================= -->
+<script>
+
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+toggle.addEventListener("click", ()=>{
+  menu.classList.toggle("active");
+});
+
+</script>
 
 </body>
 </html>
