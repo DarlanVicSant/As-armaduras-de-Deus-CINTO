@@ -7,87 +7,217 @@
 
 /* BODY */
 body{
-  height:100vh;
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #020024, #090979, #000);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+.header{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+/* LOGO */
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:gold;
+}
+
+/* MENU */
+.menu a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  position:relative;
+  transition:0.3s;
+}
+
+/* ANIMAÇÃO MENU */
+.menu a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:gold;
+  left:0;
+  bottom:-5px;
+  transition:0.4s;
+}
+
+.menu a:hover::after{
+  width:100%;
+}
+
+.menu a:hover{
+  color:gold;
+}
+
+/* HERO (ARMADURA + CINTO) */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
   overflow:hidden;
-  
-  /* FUNDO ESPIRITUAL */
-  background: linear-gradient(270deg, #000000, #0a0f2c, #1a1a40);
-  background-size: 600% 600%;
-  animation: fundoAnimado 12s ease infinite;
-  position: relative;
+  background: radial-gradient(circle at center, #0a0f2c, #000000 80%);
 }
 
-/* ANIMAÇÃO DO FUNDO */
-@keyframes fundoAnimado{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-/* LUZ DOURADA (CINTO DA VERDADE) */
-body::before{
+/* ARMADURA */
+.hero::before{
   content:"";
   position:absolute;
-  width:200%;
-  height:200%;
-  top:-50%;
-  left:-50%;
-  
-  background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 60%);
-  animation: luzGirando 10s linear infinite;
+  width:300px;
+  height:400px;
+  border-radius:40% 40% 30% 30%;
+  background: linear-gradient(180deg, #1a1a2e, #0f3460, #000);
+  box-shadow:
+    0 0 40px rgba(255,215,0,0.3),
+    inset 0 0 30px rgba(255,255,255,0.1);
+  animation: armaduraFloat 4s ease-in-out infinite;
 }
 
-/* ANIMAÇÃO DA LUZ */
-@keyframes luzGirando{
-  0%{transform:rotate(0deg);}
-  100%{transform:rotate(360deg);}
-}
-
-/* PARTÍCULAS DE LUZ */
-body::after{
+/* CINTO DA VERDADE */
+.hero::after{
   content:"";
   position:absolute;
+  width:320px;
+  height:8px;
+  top:55%;
+  background: linear-gradient(90deg, transparent, gold, #ffd700, transparent);
+  box-shadow:
+    0 0 10px gold,
+    0 0 20px #ffd700,
+    0 0 40px #ffd700;
+  animation: brilhoCinto 2s linear infinite;
+}
+
+/* ANIMAÇÕES */
+@keyframes armaduraFloat{
+  0%{ transform: translateY(0px); }
+  50%{ transform: translateY(-20px); }
+  100%{ transform: translateY(0px); }
+}
+
+@keyframes brilhoCinto{
+  0%{ opacity:0.5; transform:scaleX(0.9); }
+  50%{ opacity:1; transform:scaleX(1.1); }
+  100%{ opacity:0.5; transform:scaleX(0.9); }
+}
+
+/* TEXTO HERO */
+.hero h2{
+  font-size:50px;
+  color:gold;
+  text-shadow:0 0 20px gold, 0 0 40px #ffd700;
+  animation:float 3s ease-in-out infinite;
+}
+
+.hero p{
+  margin:15px 0;
+  opacity:0.8;
+}
+
+/* BOTÃO */
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:5px;
+  background:gold;
+  color:black;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+  background:#ffd700;
+}
+
+/* SECTIONS */
+section{
+  padding:120px 30px;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:10px;
+  width:200px;
+  text-align:center;
+  transition:0.4s;
+  backdrop-filter:blur(10px);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  background:gold;
+  color:black;
+}
+
+/* FORM */
+form{
+  max-width:400px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input, textarea{
+  padding:10px;
+  border:none;
+  border-radius:5px;
+}
+
+input:focus, textarea:focus{
+  outline:2px solid gold;
+}
+
+/* ANIMAÇÃO */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* LOADING */
+#loader{
+  position:fixed;
   width:100%;
   height:100%;
-  
-  background-image: radial-gradient(#ffd700 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity:0.2;
-  
-  animation: estrelas 20s linear infinite;
-}
-
-@keyframes estrelas{
-  0%{background-position:0 0;}
-  100%{background-position:1000px 1000px;}
-}
-
-/* TEXTO CENTRAL */
-h1{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
   color:gold;
-  font-size:3rem;
-  text-shadow: 0 0 20px gold, 0 0 40px #ffd700;
-  letter-spacing:2px;
+  font-size:30px;
+  transition:0.8s;
 }
 
 /* EFEITO DE CLIQUE */
-@keyframes clickAnim{
-  0%{
-    opacity:1;
-    transform: scale(1);
-  }
-  100%{
-    opacity:0;
-    transform: scale(3);
-  }
-}
-
 .click-effect{
   position: fixed;
   width: 20px;
@@ -97,4 +227,9 @@ h1{
   pointer-events: none;
   transform: translate(-50%, -50%);
   animation: clickAnim 0.5s ease-out;
+}
+
+@keyframes clickAnim{
+  0%{ opacity:1; transform: scale(1); }
+  100%{ opacity:0; transform: scale(3); }
 }
