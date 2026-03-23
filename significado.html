@@ -1,47 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-
 <meta charset="UTF-8">
-<title>Significado</title>
-
+<title>Cinto da Verdade</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<nav>
+<header class="header">
+  <div class="logo">🛡️ O Cinto da Verdade</div>
 
-<div class="logo">🛡 Cinto da Verdade</div>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="cinto.html">Cinto</a>
+    <a href="significado.html">Significado</a>
+    <a href="historia.html">História</a>
+    <a href="aplicacao.html">Aplicação</a>
+    <a href="versiculos.html">Versículos</a>
+    <a href="reflexao.html">Reflexão</a>
+  </nav>
 
-<div class="menu">
-<a href="index.html">Início</a>
-<a href="cinto.html">Cinto</a>
-<a href="significado.html">Significado</a>
-<a href="historia.html">História</a>
-<a href="aplicacao.html">Aplicação</a>
-<a href="versiculos.html">Versículos</a>
-<a href="reflexao.html">Reflexão</a>
-</div>
+  <div class="menu-toggle">☰</div>
+</header>
 
-</nav>
-
-<section class="container">
-
-<h1>Significado Espiritual</h1>
-
-<div class="card">
+<section class="hero">
+  <div class="hero-content">
+<h1>Significado</h1>
 
 <p>
-O cinto representa a verdade de Deus. Assim como o soldado romano
-precisava do cinto para sustentar sua armadura, o cristão precisa
-da verdade para sustentar sua fé.
+A verdade é o fundamento da vida espiritual.  
+Sem ela, toda a armadura perde seu valor.
 </p>
+    <div class="hero-buttons">
+      <a href="reflexao.html"><button>Reflexão</button></a>
+      <a href="historia.html"><button class="btn-outline">História</button></a>
+    </div>
 
-</div>
-
+  </div>
 </section>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+toggle.addEventListener("click", ()=> menu.classList.toggle("active"));
+</script>
 
 </body>
 </html>
