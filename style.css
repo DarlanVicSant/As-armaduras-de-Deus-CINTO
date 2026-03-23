@@ -112,16 +112,77 @@ body::after{
   color:gold;
 }
 
+
 /* ================= HERO ================= */
 .hero{
   height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  position:relative;
-  padding-top:80px;
+  text-align:center;
+  padding:20px;
 }
 
+/* CONTEÚDO */
+.hero-content{
+  max-width:800px;
+  padding:40px;
+
+  background:rgba(0,0,0,0.6);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+
+  box-shadow:0 0 40px rgba(255,215,0,0.3);
+}
+
+/* TÍTULO */
+.hero-content h1{
+  font-size:60px;
+  color:gold;
+  margin-bottom:20px;
+
+  text-shadow:0 0 20px gold, 0 0 40px #ffd700;
+}
+
+/* TEXTO */
+.hero-content p{
+  font-size:20px;
+  line-height:1.6;
+  opacity:0.9;
+}
+
+/* BOTÕES */
+.hero-buttons{
+  margin-top:30px;
+}
+
+.hero-buttons button{
+  margin:10px;
+  padding:14px 30px;
+  border:none;
+  border-radius:6px;
+  background:gold;
+  color:black;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero-buttons button:hover{
+  transform:scale(1.1);
+}
+
+/* BOTÃO SECUNDÁRIO */
+.btn-outline{
+  background:transparent;
+  border:2px solid gold;
+  color:gold;
+}
+
+.btn-outline:hover{
+  background:gold;
+  color:black;
+}
 /* ================= CONTAINER CENTRAL ================= */
 .container-central{
   display:flex;
