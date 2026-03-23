@@ -336,3 +336,41 @@ input:focus, textarea:focus{
   background:gold;
   border-radius:10px;
 }
+
+/* ================= FORÇA BRUTA CENTRAL ================= */
+
+.hero{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+
+/* CONTAINER CENTRAL */
+.container-central{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:center !important;
+  width:100% !important;
+}
+
+/* QUADRADOS */
+.texto-lateral,
+.texto-lateral2{
+  position:static !important; /* REMOVE ABSOLUTE */
+
+  width:800px !important;
+  max-width:90% !important;
+
+  padding:50px !important;
+
+  font-size:24px !important;
+  line-height:1.8 !important;
+
+  margin:20px auto !important;
+
+  background:rgba(0,0,0,0.7) !important;
+  border-radius:20px !important;
+
+  box-shadow:0 0 40px rgba(255,215,0,0.5) !important;
+}
