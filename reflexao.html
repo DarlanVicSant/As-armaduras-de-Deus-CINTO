@@ -1,60 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-
 <meta charset="UTF-8">
 <title>Reflexão</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<nav>
+<header class="header">
+  <div class="logo">🛡️ O Cinto da Verdade</div>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="cinto.html">Cinto</a>
+    <a href="significado.html">Significado</a>
+    <a href="historia.html">História</a>
+    <a href="aplicacao.html">Aplicação</a>
+    <a href="versiculos.html">Versículos</a>
+    <a href="reflexao.html">Reflexão</a>
+  </nav>
+  <div class="menu-toggle">☰</div>
+</header>
 
-<div class="logo">🛡 Cinto da Verdade</div>
-
-<div class="menu">
-<a href="index.html">Início</a>
-<a href="cinto.html">Cinto</a>
-<a href="significado.html">Significado</a>
-<a href="historia.html">História</a>
-<a href="aplicacao.html">Aplicação</a>
-<a href="versiculos.html">Versículos</a>
-<a href="reflexao.html">Reflexão</a>
-</div>
-
-</nav>
-
-<section class="<div class="hero">
-
-  <div class="container-central">
-
-    <div class="texto-lateral">
-
-<h1>Reflexão</h1>
-
-<p>
-Sem o cinto, toda a armadura se desmorona, pois não tem em quê se sustentar. Pedro estava tão convicto da sua fé que não se importou de morrer por ela. Pedro estava apoiado na verdade, ele tinha certeza do motivo pelo qual estava morrendo.
-
-Sem estar apoiado na verdade, não conseguimos usar nenhuma das outras peças da armadura, pois o cinto é o alicerce de toda a armadura. Ou seja, sem o cinto da verdade, não conseguimos usar o capacete da salvação, afinal, como vamos usá-lo sem saber da Verdade de Deus? Como usaríamos a espada sem conhecer a Verdade sobre ela?
-</p>
-
-</div>
-
+<section class="hero">
+  <div class="hero-content">
+    <h1>Reflexão</h1>
+    <p>
+      Sem o cinto, toda a armadura se desmorona.  
+      A verdade é o que sustenta tudo.
+    </p>
+  </div>
 </section>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+toggle.addEventListener("click", ()=> menu.classList.toggle("active"));
+</script>
 
 </body>
 </html>
-
-<footer class="footer">
-
-<footer class="rodape">
-  ©2026 By Darlan - Todos os direitos reservados.
-  
-  By: Darlan, Gabriel, Leonardo e Hanna.
-  
-  Pode até tentar mais não dar pra copiar😎
-</footer>
-
