@@ -3,6 +3,9 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+
+html{
   scroll-behavior:smooth;
 }
 
@@ -10,8 +13,8 @@
 body{
   font-family:'Poppins', sans-serif;
   color:#fff;
-  overflow-x:hidden;
   background:#000;
+  overflow-x:hidden;
 }
 
 /* ================= FUNDO ANIMADO ================= */
@@ -23,14 +26,13 @@ body::before{
   top:-10%;
   left:-10%;
 
-  background: url('img/cinto.png') no-repeat center center/cover;
+  background:url('img/cinto.png') no-repeat center center/cover;
 
   z-index:-3;
 
-  animation: fundoAnimado 25s ease-in-out infinite;
+  animation:fundoAnimado 25s ease-in-out infinite;
 }
 
-/* OVERLAY ESCURO */
 body::after{
   content:"";
   position:fixed;
@@ -41,22 +43,11 @@ body::after{
 
   background:linear-gradient(
     180deg,
-    rgba(0,0,0,0.6),
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.95)
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.85)
   );
 
   z-index:-2;
-}
-
-/* ================= PARTÍCULAS ================= */
-.particles span{
-  position:absolute;
-  width:3px;
-  height:3px;
-  background:gold;
-  border-radius:50%;
-  animation: subir 10s linear infinite;
 }
 
 /* ================= HEADER ================= */
@@ -64,29 +55,28 @@ body::after{
   position:fixed;
   width:100%;
   top:0;
+  left:0;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 40px;
+  padding:20px 40px;
   background:rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
+  backdrop-filter:blur(10px);
   z-index:1000;
-  transition:0.4s;
-}
-
-.header.scrolled{
-  background:rgba(0,0,0,0.9);
 }
 
 /* LOGO */
 .logo{
-  font-size:24px;
+  font-size:26px;
   font-weight:bold;
   color:gold;
-  text-shadow:0 0 10px gold;
 }
 
-/* MENU */
+/* MENU DESKTOP */
+.menu{
+  display:flex;
+}
+
 .menu a{
   color:white;
   margin:0 15px;
@@ -95,7 +85,6 @@ body::after{
   transition:0.3s;
 }
 
-/* ANIMAÇÃO MENU */
 .menu a::after{
   content:'';
   position:absolute;
@@ -115,35 +104,83 @@ body::after{
   color:gold;
 }
 
+/* BOTÃO MOBILE */
+.menu-toggle{
+  display:none;
+  font-size:30px;
+  cursor:pointer;
+  color:gold;
+}
+
 /* ================= HERO ================= */
 .hero{
   height:100vh;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
   position:relative;
+  padding-top:80px;
 }
 
-/* TEXTO HERO */
+/* ================= CONTAINER CENTRAL ================= */
+.container-central{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+}
+
+/* ================= QUADRADOS ================= */
+.texto-lateral,
+.texto-lateral2{
+  width:500px;
+  max-width:90%;
+  padding:40px;
+
+  font-size:20px;
+  line-height:1.7;
+
+  background:rgba(0,0,0,0.65);
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+
+  box-shadow:0 0 40px rgba(255,215,0,0.3);
+
+  transition:0.4s;
+}
+
+.texto-lateral{
+  border-left:5px solid gold;
+}
+
+.texto-lateral2{
+  border-right:5px solid gold;
+}
+
+/* HOVER */
+.texto-lateral:hover,
+.texto-lateral2:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 60px rgba(255,215,0,0.5);
+}
+
+/* ================= TITULO ================= */
 .hero h2{
+  position:absolute;
+  top:10%;
+  left:50%;
+  transform:translateX(-50%);
   font-size:60px;
   color:gold;
-  text-shadow:0 0 20px gold, 0 0 40px #ffd700;
-  animation:float 4s ease-in-out infinite;
+  text-shadow:0 0 20px gold;
 }
 
-.hero p{
-  margin:20px 0;
-  opacity:0.8;
-}
-
-/* BOTÃO */
+/* ================= BOTÃO ================= */
 button{
-  padding:12px 25px;
+  padding:14px 28px;
   border:none;
-  border-radius:5px;
+  border-radius:6px;
   background:gold;
   color:black;
   cursor:pointer;
@@ -152,12 +189,11 @@ button{
 
 button:hover{
   transform:scale(1.1);
-  background:#ffd700;
 }
 
 /* ================= SECTIONS ================= */
 section{
-  padding:120px 30px;
+  padding:120px 40px;
 }
 
 /* ================= CARDS ================= */
@@ -169,19 +205,36 @@ section{
 }
 
 .card{
+  width:250px;
+  padding:30px;
+  border-radius:15px;
   background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:10px;
-  width:200px;
   text-align:center;
-  transition:0.4s;
   backdrop-filter:blur(10px);
+  transition:0.4s;
 }
 
 .card:hover{
   transform:translateY(-10px) scale(1.05);
   background:gold;
   color:black;
+}
+
+/* ================= GALERIA ================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.1);
 }
 
 /* ================= FORM ================= */
@@ -194,7 +247,7 @@ form{
 }
 
 input, textarea{
-  padding:10px;
+  padding:12px;
   border:none;
   border-radius:5px;
 }
@@ -203,57 +256,74 @@ input:focus, textarea:focus{
   outline:2px solid gold;
 }
 
-/* ================= SCROLL ANIMAÇÃO ================= */
-.hidden{
-  opacity:0;
-  transform:translateY(50px);
-  transition:1s;
-}
-
-.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
 /* ================= CLICK EFFECT ================= */
 .click-effect{
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: gold;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  animation: clickAnim 0.5s ease-out;
+  position:fixed;
+  width:20px;
+  height:20px;
+  background:gold;
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%, -50%);
+  animation:clickAnim 0.5s ease-out;
 }
 
 /* ================= ANIMAÇÕES ================= */
-@keyframes fundoAnimado{
-  0%{ transform: scale(1) translate(0,0); }
-  25%{ transform: scale(1.1) translate(-20px, -20px); }
-  50%{ transform: scale(1.2) translate(20px, 20px); }
-  75%{ transform: scale(1.1) translate(-10px, 10px); }
-  100%{ transform: scale(1) translate(0,0); }
-}
-
-@keyframes float{
-  0%{ transform:translateY(0); }
-  50%{ transform:translateY(-15px); }
-  100%{ transform:translateY(0); }
-}
-
 @keyframes clickAnim{
-  0%{ opacity:1; transform:scale(1); }
-  100%{ opacity:0; transform:scale(3); }
+  0%{opacity:1; transform:scale(1);}
+  100%{opacity:0; transform:scale(3);}
 }
 
-@keyframes subir{
-  0%{ transform:translateY(100vh); opacity:0; }
-  50%{ opacity:1; }
-  100%{ transform:translateY(-10vh); opacity:0; }
+@keyframes fundoAnimado{
+  0%{ transform:scale(1) translate(0,0);}
+  50%{ transform:scale(1.1) translate(20px,20px);}
+  100%{ transform:scale(1) translate(0,0);}
 }
 
-/* ================= SCROLL BAR ================= */
+/* ================= RESPONSIVO ================= */
+@media(max-width:1000px){
+
+  .container-central{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .texto-lateral,
+  .texto-lateral2{
+    width:90%;
+    font-size:18px;
+  }
+
+  .hero h2{
+    font-size:35px;
+  }
+
+  .menu{
+    position:fixed;
+    top:70px;
+    right:-100%;
+    flex-direction:column;
+    background:rgba(0,0,0,0.9);
+    width:200px;
+    padding:20px;
+    transition:0.4s;
+  }
+
+  .menu.active{
+    right:0;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+
+/* ================= EXTRA VISUAL ================= */
+.glow{
+  box-shadow:0 0 20px gold;
+}
+
+/* ================= SCROLL ================= */
 ::-webkit-scrollbar{
   width:8px;
 }
@@ -261,33 +331,4 @@ input:focus, textarea:focus{
 ::-webkit-scrollbar-thumb{
   background:gold;
   border-radius:10px;
-}
-
-/* ================= RESPONSIVO ================= */
-@media(max-width:768px){
-  .hero h2{
-    font-size:35px;
-  }
-
-  .menu{
-    display:none;
-  }
-}
-
-/* ================= EXTRA VISUAL ================= */
-.hero::after{
-  content:"";
-  position:absolute;
-  width:60%;
-  height:4px;
-  top:60%;
-  background:linear-gradient(90deg, transparent, gold, transparent);
-  box-shadow:0 0 20px gold;
-  animation: brilho 2s infinite;
-}
-
-@keyframes brilho{
-  0%{ opacity:0.5; }
-  50%{ opacity:1; }
-  100%{ opacity:0.5; }
 }
