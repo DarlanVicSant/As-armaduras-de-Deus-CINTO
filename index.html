@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Início</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="header">
-  <div class="logo">🛡️ Cinto da Verdade</div>
+  <div class="logo">🛡️ O Cinto da Verdade</div>
 
   <nav class="menu">
     <a href="index.html">Início</a>
@@ -27,14 +29,20 @@
 <section class="hero">
   <div class="hero-content">
     <h1>Armadura de Deus</h1>
-    <p>Descubra o poder espiritual do Cinto da Verdade.</p>
+    <p>Conheça o poder espiritual do Cinto da Verdade.</p>
 
     <div class="hero-buttons">
-      <a href="cinto.html"><button>Começar</button></a>
+      <a href="cinto.html"><button>Explorar</button></a>
+      <a href="versiculos.html"><button class="btn-outline">Versículos</button></a>
     </div>
   </div>
 </section>
 
-<script src="script.js"></script>
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+toggle.addEventListener("click", ()=> menu.classList.toggle("active"));
+</script>
+
 </body>
 </html>
